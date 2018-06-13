@@ -65,7 +65,7 @@ public class DirectedGraph<T> extends Graph<T> {
      */
     @Override
     public Arc<T> createArc(Node<T> in, Node<T> en, int w) {
-        return new DirectedArc(in, en, w);
+        return new DirectedArc<>(in, en, w);
     }
 
     @Override
@@ -93,7 +93,7 @@ public class DirectedGraph<T> extends Graph<T> {
     }
 
     @Override
-    public List<Node<T>> getNeighboursForNode(Node<T> node) {
+    public List<Node<T>> getReachablesNodesForNode(Node<T> node) {
         List<Node<T>> listOfNodes = new ArrayList<>();
 
         if (vertices.contains(node)) {
@@ -138,7 +138,7 @@ public class DirectedGraph<T> extends Graph<T> {
 
         @Override
         protected List<Node<T>> getNeighbours(Node<T> nodeToVisit) {
-            return getNeighboursForNode(nodeToVisit);
+            return getReachablesNodesForNode(nodeToVisit);
         }
 
         @Override

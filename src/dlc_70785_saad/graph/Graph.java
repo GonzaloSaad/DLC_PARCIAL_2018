@@ -431,7 +431,7 @@ public abstract class Graph <T> implements Cloneable
         return vertices.get(k).getArcs().size();
     }
     
-    public abstract List<Node<T>> getNeighboursForNode(Node<T> node);
+    public abstract List<Node<T>> getReachablesNodesForNode(Node<T> node);
 
     public abstract GraphDepthFirstParser<T> getGraphDepthFirstParser();
     

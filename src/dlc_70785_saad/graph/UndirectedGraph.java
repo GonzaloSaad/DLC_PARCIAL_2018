@@ -70,7 +70,7 @@ public class UndirectedGraph<T> extends Graph<T> {
     }
 
     @Override
-    public List<Node<T>> getNeighboursForNode(Node<T> node) {
+    public List<Node<T>> getReachablesNodesForNode(Node<T> node) {
         List<Node<T>> listOfNodes = new ArrayList<>();
 
         if (vertices.contains(node)) {
@@ -121,7 +121,7 @@ public class UndirectedGraph<T> extends Graph<T> {
 
         @Override
         protected List<Node<T>> getNeighbours(Node<T> nodeToVisit) {
-            return getNeighboursForNode(nodeToVisit);
+            return getReachablesNodesForNode(nodeToVisit);
         }
 
         @Override
